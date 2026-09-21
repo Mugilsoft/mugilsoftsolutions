@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
+  --color-primary-light: #fff7ed;
+  --color-accent: #fb923c;
+  --color-surface: #f8fafc;
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
+  --color-navy-medium: #334155;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-25px, 25px) scale(1.08); }
+  50% { transform: translate(15px, -30px) scale(0.92); }
+  75% { transform: translate(-10px, -15px) scale(1.03); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -25px); }
+}
+
+.animate-float-slow { animation: float-slow 12s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 9s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 7s ease-in-out infinite; }
+
+@keyframes counter-up {
+  from { --num: 0; }
+}
+
+.animate-counter { animation: counter-up 2s ease-out forwards; }
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
